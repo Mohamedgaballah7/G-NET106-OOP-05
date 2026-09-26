@@ -56,6 +56,37 @@ namespace c_oop05
              as it is not meant to be instantiated. It is used to group related static methods and fields together.*/
 
             #endregion
+            #region q4
+            //a) What is an Extension Method?
+            /*An extension method is a static method that allows you to add new methods to existing types without modifying their source code.
+             It is defined in a static class and uses the "this" keyword in its first parameter to specify the type it extends.*/
+
+            //b) What keyword must be used in the first parameter of an extension method?
+            //The first parameter must use the this keyword
+
+            //c) Where must an extension method be declared?
+            //An extension method must be declared inside a static class.
+
+            //d) Can an extension method access private members of the class it extends?
+            /*No, an extension method cannot access private members of the class it extends.
+             It can only access public and protected members.*/
+
+            #endregion
+            #region q5
+            //a) What is a Partial Class?
+            //A Partial Class allows you to split the definition of one class into multiple files using the partial keyword.
+
+            //b) Why would a developer split one class into multiple files?
+            /*Keep large classes organized.
+              Make the code easier to read and maintain.
+             Separate different responsibilities or sections of the class.*/
+
+            //c) What is a Partial Method?
+            //A Partial Method is a method that can be declared in one part of a partial class and implemented in another part.
+
+            //d) What happens if a declared partial method has no implementation?
+            //If a declared partial method has no implementation, the compiler removes the method declaration and any calls to it,
+            #endregion
             #endregion
         }
     }
