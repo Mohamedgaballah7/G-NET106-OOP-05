@@ -1,4 +1,6 @@
-﻿using System.Drawing;
+﻿using G_NET_106_OOP_05;
+using G_NET106_OOP_02.part2;
+using System.Drawing;
 
 namespace c_oop05
 {
@@ -86,6 +88,82 @@ namespace c_oop05
 
             //d) What happens if a declared partial method has no implementation?
             //If a declared partial method has no implementation, the compiler removes the method declaration and any calls to it,
+            #endregion
+            #endregion
+
+            #region part 02 - practical
+
+            #region Part 02 — Practical
+           
+            DeliveryAddress address = new DeliveryAddress("cairo", "tahrir", 10);
+            Shipment shipment = new Shipment("Phone", 1, 40, address);
+
+            Shipment shipment1 = shipment.CopyShipment();
+            Console.WriteLine(shipment);
+            Console.WriteLine();
+            Console.WriteLine(shipment1);
+
+            shipment1.Weight = 5;
+
+            Console.WriteLine();
+            Console.WriteLine("after changing weight");
+            Console.WriteLine(shipment);
+            Console.WriteLine();
+            Console.WriteLine(shipment1);
+            Console.WriteLine();
+
+            Console.WriteLine("shallow copying ");
+            Console.WriteLine("before editing address");
+            Console.WriteLine(shipment);
+            Console.WriteLine();
+            Console.WriteLine(shipment1);
+            Shipment shallow = shipment.ShallowCopying();
+            Console.WriteLine();
+            Console.WriteLine("after changing copied  address street");
+            shallow.destination.street = "syria";
+            Console.WriteLine();
+            Console.WriteLine(shipment);
+            Console.WriteLine();
+            Console.WriteLine(shallow);
+            Console.WriteLine();
+      
+
+            Console.WriteLine("address before changing in deep copy ");
+            Shipment deepCopy = shipment.DeepCopy();
+            Console.WriteLine();
+            Console.WriteLine(shipment);
+            Console.WriteLine();
+            Console.WriteLine(deepCopy);
+            Console.WriteLine("after changing street in deep copy");
+            deepCopy.destination.street = "el gesh road";
+
+            Console.WriteLine();
+            Console.WriteLine(shipment);
+            Console.WriteLine();
+            Console.WriteLine(deepCopy);
+            Console.WriteLine();
+
+            Console.WriteLine("static");
+            Console.WriteLine(Shipment.TotalShipmentsCreated);
+        
+
+            Console.WriteLine();
+            
+
+            Console.WriteLine($"total shipment created : {Shipment.TotalShipmentsCreated}");
+            DeliveryUtilities.PrintSeparator();
+            DeliveryUtilities.PrintSystemTitle();
+
+            DeliveryUtilities.PrintSeparator();
+         
+
+            shipment.GetSummary();
+            shipment.IsDelivered();
+         
+
+            DeliveryUtilities.PrintSeparator();
+            shipment.UpdateTrackingStatus("Out For Delivery");
+
             #endregion
             #endregion
         }
